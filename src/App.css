@@ -58,5 +58,3 @@ main {
 .headline{
     color: pink;
 }
-
-mongodb+srv://bingerUser:<password>@cluster0.ibeyl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
