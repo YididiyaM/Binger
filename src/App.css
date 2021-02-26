@@ -15,32 +15,48 @@ main {
 .glass{
     background: white;
     min-height: 80vh;
-    width: 60%;
+    width: 55vh;
     background: linear-gradient(to right bottom, 
                rgba(255,255,255,0.7),
                rgba(255, 255,255, 0.3));
     border-radius: 2rem;
+    z-index:2;
+    backdrop-filter: blur(2rem);
+    position: absolute;
+    right: 10%;
 }
 
 .circle1,
-.circle2{
+.circle2,
+.circle3{
     background: white;
     background: linear-gradient(
         to right bottom,
-        rgba(255,255,255,0.9),
-        rgba(255,255,255,0.1)
+        rgba(255,255,255,0.8),
+        rgba(255,255,255,0.3)
     );
     height: 20rem;
     width: 20rem;
     position: absolute;
+    border-radius: 50%;
     
 }
 .circle1{
     top:5%;
-    left: 10%; 
+    right: 25%; 
 }
 
 .circle2{
-    bottom: 5%;
+    bottom: -15%;
     left: 10%;
 }
+.circle3{
+    top:-15%;
+    left: -4%;
+}
+
+.headline{
+    color: pink;
+}
+
+mongodb+srv://bingerUser:<password>@cluster0.ibeyl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
