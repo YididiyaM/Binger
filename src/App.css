@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +18,7 @@ main {
   margin-bottom: 250px;
   margin-right: 700px;
   color: #0c1e35;
+  font-family: "Fira Sans";
 }
 
 .headline h1 {
@@ -106,7 +108,7 @@ main {
     rgba(255, 255, 255, 0.8),
     rgba(255, 255, 255, 0.3)
   );
-
+  box-shadow: 3px 3px 5px 6px rgb(127, 187, 211);
   position: absolute;
   border-radius: 54% 46% 42% 58% / 60% 58% 42% 40%;
   animation: wave 5s linear infinite;
@@ -119,7 +121,7 @@ main {
 }
 
 .circle2 {
-  bottom: 15%;
+  bottom: 8%;
   left: 10%;
   height: 17rem;
   width: 20rem;
