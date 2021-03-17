@@ -1,14 +1,13 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import LoginPage from './Components/Templates/LoginPage'
-import './App.css';
+import LoginPage from "./components/pages/loginPage/LoginPage";
+import "./App.css";
 
 function App() {
   return (
     <div>
-      <LoginPage/>
+      <LoginPage />
     </div>
-   
   );
 }
 
