@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import Axios from "axios";
-
 function LoginPage() {
   const [registerUsername, setRegisterUsername] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [loginUsername, setLoginUsername] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-
   const register = () => {
     Axios({
       method: "POST",
