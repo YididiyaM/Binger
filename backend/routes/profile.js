@@ -21,7 +21,7 @@ router.route("/add").post((req, res) => {
 
 router.route("/:id").get((req, res) => {
   Profile.findById(req.params.id)
-    .then((profile) => res.json(exercise))
+    .then((profiles) => res.json(profiles))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
@@ -33,9 +33,9 @@ router.route("/:id").delete((req, res) => {
 
 router.route("/update/:id").post((req, res) => {
   Profile.findById(req.params.id)
-    .then((profile) => {
-      exercise.description = req.body.description;
-      exercise
+    .then((profiles) => {
+      profiles.description = req.body.description;
+      profiles
         .save()
         .then(() => res.json("Profile updated!"))
         .catch((err) => res.status(400).json("Error: " + err));
