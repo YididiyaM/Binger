@@ -77,9 +77,6 @@ app.post("/login", (req, res, next) => {
   })(req, res, next);
 });
 
-app.get("/home", (req, res) => {
-  res.send("THIS IS THE HOME PAGE");
-});
 //Start server
 app.listen(4000, () => {
   console.log("Server has started");
