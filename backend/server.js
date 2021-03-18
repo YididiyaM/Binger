@@ -46,10 +46,6 @@ require("./passportConfig")(passport);
 
 //Routes
 
-app.get("/", (req, res) => {
-  res.send("THIS IS THE HOME PAGE");
-});
-
 app.post("/register", (req, res) => {
   User.findOne({ username: req.body.username }, async (err, doc) => {
     if (err) throw err;
@@ -61,8 +57,8 @@ app.post("/register", (req, res) => {
         password: hashedPassword,
       });
       await newUser.save();
-      res.send("User created");
-      //res.redirect("/");
+      res.send("Created");
+      //res.redirect("/home");
     }
   });
   console.log(req.body);
@@ -75,14 +71,17 @@ app.post("/login", (req, res, next) => {
     else {
       req.logIn(user, (err) => {
         if (err) throw err;
-        res.send("Successfully Authenticated");
+        res.send("Successful");
         console.log(req.user);
-        //res.redirect('/')
+        // res.redirect("/home");
       });
     }
   })(req, res, next);
 });
 
+app.get("/home", (req, res) => {
+  res.send("THIS IS THE HOME PAGE");
+});
 //Start server
 app.listen(4000, () => {
   console.log("Server has started");
