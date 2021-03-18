@@ -77,6 +77,12 @@ app.post("/login", (req, res, next) => {
   })(req, res, next);
 });
 
+app.get("/usernames", (req, res) => {
+  User.find()
+    .then((users) => res.json(users))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
 //profile routes
 
 const profileRoute = require("./routes/profile");
