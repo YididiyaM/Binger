@@ -58,7 +58,6 @@ app.post("/register", (req, res) => {
       });
       await newUser.save();
       res.send("Created");
-      //res.redirect("/home");
     }
   });
   console.log(req.body);
@@ -73,7 +72,6 @@ app.post("/login", (req, res, next) => {
         if (err) throw err;
         res.send("Successful");
         console.log(req.user);
-        // res.redirect("/home");
       });
     }
   })(req, res, next);
