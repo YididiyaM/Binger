@@ -5,7 +5,6 @@ function HomePage() {
   useEffect(() => {
     const getData = async () => {
       const response = await fetch(url, { mode: "cors" });
-      // console.log(response);
       const data = await response.json();
       console.log(data);
       setUsers(data);
