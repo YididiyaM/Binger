@@ -77,6 +77,11 @@ app.post("/login", (req, res, next) => {
   })(req, res, next);
 });
 
+//profile routes
+
+const profileRoute = require("./routes/profile");
+
+app.use("/profiles", profileRoute);
 //Start server
 app.listen(4000, () => {
   console.log("Server has started");
