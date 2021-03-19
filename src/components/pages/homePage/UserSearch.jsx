@@ -10,7 +10,7 @@ export default function UserSearch({ users }) {
   useEffect(() => {
     const results = names.filter((val) => {
       if (searchName == "") {
-        return "No user by that name";
+        return val;
       } else if (val.toLowerCase().includes(searchName.toLowerCase())) {
         return val;
       }
