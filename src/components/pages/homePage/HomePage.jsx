@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import UserSearch from "../homePage/UserSearch";
+import UserSearch from "./components/UserSearch.component";
 function HomePage() {
   const [users, setUsers] = useState([]);
   const url = "http://localhost:4000/usernames";
