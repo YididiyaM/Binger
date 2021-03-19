@@ -29,7 +29,7 @@ export default function UserSearch({ users }) {
         }}
       />
       <div className="results">
-        <Link to="/register">
+        <Link to="/{:username}">
           <p className="search">{searchResult}</p>
         </Link>
       </div>
