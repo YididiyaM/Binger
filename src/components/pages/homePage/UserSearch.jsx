@@ -1,7 +1,9 @@
 import React from "react";
 
 export default function UserSearch({ users }) {
-  console.log(users.filter((x) => x.username === "Hey"));
+  const names = users.map((name) => {
+    return name.username;
+  });
   return (
     <div>
       <input placeholder="username here"></input>
