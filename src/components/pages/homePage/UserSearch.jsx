@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export default function UserSearch({ users }) {
+  const [searchName, setSearchName] = useState("");
+  const [searchResult, setSearchResult] = useState;
   const names = users.map((name) => {
     return name.username;
   });
   return (
     <div>
-      <input placeholder="username here"></input>
-      <button> Submit </button>
-      <h2></h2>
+      <input placeholder="search username here"></input>
     </div>
   );
 }
