@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function UserSearch({ users }) {
   const [searchName, setSearchName] = useState("");
@@ -27,7 +28,11 @@ export default function UserSearch({ users }) {
           setSearchName(event.target.value);
         }}
       />
-      <div className="results">{searchResult}</div>
+      <div className="results">
+        <Link to="/register">
+          <p className="search">{searchResult}</p>
+        </Link>
+      </div>
     </div>
   );
 }
