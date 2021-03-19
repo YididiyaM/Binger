@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 export default function UserSearch({ users }) {
   const [searchName, setSearchName] = useState("");
-  const [searchResult, setSearchResult] = useState("");
   const names = users.map((name) => {
     return name.username;
   });
@@ -16,6 +15,13 @@ export default function UserSearch({ users }) {
           setSearchName(event.target.value);
         }}
       />
+      {names.filter((val) => {
+        if (searchName == "") {
+          return "No user by that name";
+        } else if (val.toLowerCase().includes(searchName.toLowerCase())) {
+          return val;
+        }
+      })}
     </div>
   );
 }
