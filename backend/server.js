@@ -93,7 +93,7 @@ app.get("/users/:id", async (req, res) => {
 
 const profileRoute = require("./routes/profile.router");
 
-app.use("/users/:id/profiles", profileRoute);
+app.use("/users", profileRoute);
 //Start server
 app.listen(4000, () => {
   console.log("Server has started");

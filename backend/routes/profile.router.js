@@ -1,19 +1,19 @@
 const router = require("express").Router();
 let Profile = require("../models/profile.model");
 
-router.route("/").get((req, res) => {
+router.route("/:id/profiles").get((req, res) => {
   Profile.find()
     .then((profiles) => res.json(profiles))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/add").post((req, res) => {
+router.route("/:id/profiles/add").post(async (req, res) => {
+  const { id } = req.params;
   const description = req.body.description;
-  const user = req.body.user;
+  const user = await User.findById(id);
 
   const newProfile = new Profile({
     description,
-    user,
   });
   newProfile
     .save()
