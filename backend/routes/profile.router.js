@@ -9,9 +9,11 @@ router.route("/").get((req, res) => {
 
 router.route("/add").post((req, res) => {
   const description = req.body.description;
+  const user = req.body.user;
 
   const newProfile = new Profile({
     description,
+    user,
   });
   newProfile
     .save()
