@@ -25,19 +25,19 @@ router.route("/:id/profiles/add").post(async (req, res) => {
   user.save();
 });
 
-router.route("/:id").get((req, res) => {
+router.route("/:id/profiles/:id").get((req, res) => {
   Profile.findById(req.params.id)
     .then((profiles) => res.json(profiles))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/:id").delete((req, res) => {
+router.route("/:id/profiles/:id").delete((req, res) => {
   Profile.findByIdAndDelete(req.params.id)
     .then(() => res.json("Profile deleted."))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/update/:id").post((req, res) => {
+router.route("/:id/profiles/update/:id").post((req, res) => {
   Profile.findById(req.params.id)
     .then((profiles) => {
       profiles.description = req.body.description;
