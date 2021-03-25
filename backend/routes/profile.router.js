@@ -1,5 +1,6 @@
 const router = require("express").Router();
 let Profile = require("../models/profile.model");
+let User = require("../models/user.model");
 
 router.route("/:id/profiles").get((req, res) => {
   Profile.find()
@@ -15,10 +16,13 @@ router.route("/:id/profiles/add").post(async (req, res) => {
   const newProfile = new Profile({
     description,
   });
+
+  user.profiles.push(newProfile);
   newProfile
     .save()
     .then(() => res.json("Profile added!"))
     .catch((err) => res.status(400).json("Error: " + err));
+  user.save();
 });
 
 router.route("/:id").get((req, res) => {
