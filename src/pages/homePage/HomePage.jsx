@@ -13,9 +13,9 @@ function HomePage() {
 
   return (
     <div className="classname">
+      <NavBar />
       <h1>Home Page </h1>
       <UserSearch users={users} />
-      <NavBar />
     </div>
   );
 }
