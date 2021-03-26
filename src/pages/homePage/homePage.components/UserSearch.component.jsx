@@ -12,7 +12,8 @@ export default function UserSearch({ users }) {
     const results = names.filter((val) => {
       if (searchName === "") {
         return false;
-      } else if (val.toLowerCase().includes(searchName.toLowerCase())) {
+      }
+      if (val.toLowerCase().includes(searchName.toLowerCase())) {
         return val;
       }
     });
