@@ -58,7 +58,7 @@ app.post("/register", (req, res) => {
         password: hashedPassword,
       });
       await newUser.save();
-      res.send("Created");
+      res.send(req.body);
     }
   });
   console.log(req.body);
@@ -71,7 +71,7 @@ app.post("/login", (req, res, next) => {
     else {
       req.logIn(user, (err) => {
         if (err) throw err;
-        res.send("Successful");
+        res.send(req.body);
         console.log(req.user);
       });
     }
@@ -82,6 +82,10 @@ app.get("/users", (req, res) => {
   User.find()
     .then((users) => res.json(users))
     .catch((err) => res.status(400).json("Error: " + err));
+});
+
+app.get("/user", (req, res) => {
+  res.send(req.user);
 });
 
 app.get("/users/:id", async (req, res) => {

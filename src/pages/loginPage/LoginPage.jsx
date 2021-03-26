@@ -17,7 +17,8 @@ function LoginPage() {
       withCredentials: true,
       url: "http://localhost:4000/register",
     }).then((res) => {
-      if (res.data === "Created") {
+      if (res.data) {
+        console.log(res.data);
         window.location.href = "/home";
       }
     });
@@ -33,7 +34,8 @@ function LoginPage() {
       withCredentials: true,
       url: "http://localhost:4000/login",
     }).then((res) => {
-      if (res.data === "Successful") {
+      if (res.data) {
+        console.log(res.data);
         window.location.href = "/home";
       }
     });
