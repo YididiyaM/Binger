@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
 //Styling
-import loginPage from "../loginPage/loginPage.css";
+import loginPage from "./loginPage.css";
 function LoginPage() {
   const [registerUsername, setRegisterUsername] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
@@ -64,6 +64,7 @@ function LoginPage() {
             />
 
             <input
+              type="password"
               placeholder="password"
               onChange={(e) => setRegisterPassword(e.target.value)}
             />
@@ -76,6 +77,7 @@ function LoginPage() {
               onChange={(e) => setLoginUsername(e.target.value)}
             />
             <input
+              type="password"
               placeholder="password"
               onChange={(e) => setLoginPassword(e.target.value)}
             />

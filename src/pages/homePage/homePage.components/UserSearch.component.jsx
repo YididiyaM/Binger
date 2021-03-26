@@ -10,9 +10,10 @@ export default function UserSearch({ users }) {
 
   useEffect(() => {
     const results = names.filter((val) => {
-      if (searchName == "") {
-        return val;
-      } else if (val.toLowerCase().includes(searchName.toLowerCase())) {
+      if (searchName === "") {
+        return false;
+      }
+      if (val.toLowerCase().includes(searchName.toLowerCase())) {
         return val;
       }
     });

@@ -8,6 +8,7 @@ const bcrypt = require("bcryptjs");
 const session = require("express-session");
 const bodyParser = require("body-parser");
 const User = require("./models/user.model");
+const Profile = require("./models/profile.model");
 
 const app = express();
 
@@ -77,17 +78,22 @@ app.post("/login", (req, res, next) => {
   })(req, res, next);
 });
 
-app.get("/usernames", (req, res) => {
+app.get("/users", (req, res) => {
   User.find()
     .then((users) => res.json(users))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
+app.get("/users/:id", async (req, res) => {
+  const user = await User.findById(req.params.id);
+  res.send(user);
+});
+
 //profile routes
 
-const profileRoute = require("./routes/profile");
+const profileRoute = require("./routes/profile.router");
 
-app.use("/profiles", profileRoute);
+app.use("/users", profileRoute);
 //Start server
 app.listen(4000, () => {
   console.log("Server has started");

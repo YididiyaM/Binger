@@ -13,6 +13,12 @@ const user = new mongoose.Schema({
     trim: true,
     minlength: 4,
   },
+  profiles: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Profile",
+    },
+  ],
 });
 
 module.exports = mongoose.model("User", user);
