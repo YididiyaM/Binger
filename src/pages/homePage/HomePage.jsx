@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import UserSearch from "./homePage.components/UserSearch.component";
+import NavBar from "..//../components/navBar/NavBar";
+import LoginPage from "../loginPage/LoginPage";
 function HomePage() {
   const [users, setUsers] = useState([]);
-  const url = "http://localhost:4000/usernames";
+  const url = "http://localhost:4000/users";
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
@@ -13,6 +15,7 @@ function HomePage() {
     <div className="classname">
       <h1>Home Page </h1>
       <UserSearch users={users} />
+      <NavBar />
     </div>
   );
 }

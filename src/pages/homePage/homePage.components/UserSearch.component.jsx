@@ -11,7 +11,7 @@ export default function UserSearch({ users }) {
   useEffect(() => {
     const results = names.filter((val) => {
       if (searchName == "") {
-        return val;
+        return false;
       } else if (val.toLowerCase().includes(searchName.toLowerCase())) {
         return val;
       }
