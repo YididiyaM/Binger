@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
 //Styling
-import loginPage from "../loginPage/loginPage.css";
+import loginPage from "./loginPage.css";
 function LoginPage() {
   const [registerUsername, setRegisterUsername] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
